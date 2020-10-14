@@ -1,0 +1,60 @@
+{
+  "data": {
+    "Analysis": [
+      {
+        "Cause": "——",
+        "TypeFrequency": 0,
+        "TypeName": "System事件"
+      },
+      {
+        "Cause": "——",
+        "TypeFrequency": 1286,
+        "TypeName": "数据库读取"
+      },
+      {
+        "Cause": "——",
+        "TypeFrequency": 229,
+        "TypeName": "数据库插入"
+      },
+      {
+        "Cause": "——",
+        "TypeFrequency": 61,
+        "TypeName": "数据库修改"
+      }
+    ],
+    "Anomaly": [
+      {
+        "Log": "\tat oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:145)",
+        "Time": "2020-10-14 05:42:31.014636",
+        "Type": "日志监控"
+      },
+      {
+        "Log": "\tat oracle.jdbc.driver.DatabaseError.throwSqlException(DatabaseError.java:145)",
+        "Time": "2020-10-14 05:42:31.014871",
+        "Type": "日志监控"
+      }
+    ],
+    "Predict": [
+      {
+        "Example": "[2020-06-01 15:29:38,363] Third's :ERROR LdapTemplate:1444 - Authentication failed for entry with DN 'cn=P0110103015,ou=O0110125095,ou=JB,o=SGCC'",
+        "Name": "鉴权",
+        "Probability1": 0.05263157894736842
+      },
+      {
+        "Example": "[2020-06-01 15:29:53,540] Third's :ERROR LdapTemplate:1444 - Authentication failed for entry with DN 'cn=P0110016029,ou=O0110124404,ou=JB,o=SGCC'",
+        "Name": "鉴权",
+        "Probability1": 0.05263157894736842
+      },
+      {
+        "Example": "[2020-06-01 16:11:16,504] Third's :ERROR LdapTemplate:1444 - Authentication failed for entry with DN 'cn=P0110017763,ou=O0110125095,ou=JB,o=SGCC'",
+        "Name": "鉴权",
+        "Probability1": 0.05263157894736842
+      },
+      {
+        "Example": "[2020-06-01 16:11:25,202] Third's :ERROR LdapTemplate:1444 - Authentication failed for entry with DN 'cn=P0110017763,ou=O0110125095,ou=JB,o=SGCC'",
+        "Name": "鉴权",
+        "Probability1": 0.05263157894736842
+      }
+    ]
+  }
+}

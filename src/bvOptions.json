@@ -1,0 +1,31 @@
+{
+	"breakpoints": [
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl",
+		"xxl"
+	],
+  "formControls": {
+    "size": "sm"
+  },
+  "BButton": {
+    "size": "sm",
+    "variant": "secondary"
+  },
+  "BToast": {
+    "toaster": "b-toaster-bottom-center",
+    "autoHideDelay": 2000,
+    "variant": "primary",
+    "toastClass": null,
+    "headerClass": null,
+    "bodyClass": null
+	},
+	"BModal": {
+    "cancelTitle": "取消",
+    "cancelVariant": "secondary",
+    "okTitle": "确定",
+    "okVariant": "primary"
+	}
+}

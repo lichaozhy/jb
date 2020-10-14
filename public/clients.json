@@ -1,0 +1,9 @@
+{
+  "clients": [
+    {
+      "ip": "127.0.0.1",
+      "log_count_all": 10000,
+      "log_count_today": 0
+    }
+  ]
+}
