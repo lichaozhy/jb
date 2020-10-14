@@ -33,17 +33,15 @@
 			</b-col>
 			<b-col cols="9">
 				<b-button-toolbar justify>
-					<b-button-group class="mx-1">
-					</b-button-group>
-					<b-button-group class="mx-1">
-						<b-button
-							href="/get_report"
-							variant="primary"
-							target="_blank"
-						><b-icon-download
-							class="mr-2"
-						/>导出日志</b-button>
-					</b-button-group>
+					<div></div>
+					<b-button
+						size="sm"
+						href="/get_report"
+						variant="primary"
+						target="_blank"
+					><b-icon-download
+						class="mr-2"
+					/>导出日志</b-button>
 				</b-button-toolbar>
 				<h4><b-icon-exclamation-octagon
 					class="mr-2"
