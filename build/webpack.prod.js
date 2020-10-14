@@ -7,7 +7,6 @@ module.exports = merge(webpackBaseConfig, {
 	mode: 'production',
 	output: {
 		path: path.resolve('dist'),
-		filename: '[name].js'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

@@ -26,9 +26,6 @@ app.use(router.routes()).listen(8080);
 module.exports = merge(webpackBaseConfig, {
 	devtool: '#inline-source-map',
 	mode: 'development',
-	output: {
-		filename: '[name].js'
-	},
 	devServer: {
 		port: 3000,
 		host: '0.0.0.0',

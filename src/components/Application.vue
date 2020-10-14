@@ -27,7 +27,12 @@
 							:active="Client.selected.ip === client.ip"
 						><b-icon-laptop
 							class="mr-1"
-						/>{{ client.ip }}</b-list-group-item>
+						/>{{ client.ip }}<div
+							class="d-flex justify-content-between mt-1"
+						>
+							<div><span style="font-weight:bold">当日日志：</span>{{ client.log_count_today }}</div>
+							<div><span style="font-weight:bold">历史总量：</span>{{ client.log_count_all }}</div>
+						</div></b-list-group-item>
 					</b-list-group>
 				</b-card>
 			</b-col>
@@ -43,9 +48,26 @@
 						class="mr-2"
 					/>导出日志</b-button>
 				</b-button-toolbar>
+
+				<h4><b-icon-eye
+					class="mr-2"
+				/>潜在风险预测</h4>
+
+				<b-table
+					head-row-variant="info"
+					:fields="predictFields"
+					:items="data.Predict"
+					bordered
+					class="mt-3"
+					small
+					hover
+				>
+					<template v-slot:cell(Probability1)="row">{{ row.item.Probability1.toFixed(6) }}</template>
+				</b-table>
+
 				<h4><b-icon-exclamation-octagon
 					class="mr-2"
-				/>预测故障</h4>
+				/>系统事件统计</h4>
 
 				<b-table
 					head-row-variant="info"
@@ -61,7 +83,7 @@
 
 				<h4><b-icon-hourglass-split
 					class="mr-2"
-				/>分析结果</h4>
+				/>系统警告记录</h4>
 
 				<b-table
 					head-row-variant="info"
@@ -72,23 +94,6 @@
 					small
 					hover
 				></b-table>
-
-				<h4><b-icon-eye
-					class="mr-2"
-				/>识别结果</h4>
-
-				<b-table
-					head-row-variant="info"
-					:fields="predictFields"
-					:items="data.Predict"
-					bordered
-					class="mt-3"
-					small
-					hover
-				>
-					<template v-slot:cell(Probability1)="row">{{ row.item.Probability1.toFixed(6) }}</template>
-				</b-table>
-
 			</b-col>
 		</b-row>
 	</b-container>
@@ -131,22 +136,24 @@ export default {
 	computed: {
 		predictFields() {
 			return [
-				{ key: 'Name', label: '名称' },
-				{ key: 'Example', label: '举例' },
-				{ key: 'Probability1', label: '风险比例' }
+				{ key: 'Name', label: '风险来源' },
+				{ key: 'Example', label: '样本日志' },
+				{ key: 'Probability1', label: '风险系数' }
 			];
 		},
 		analysisFields() {
 			return [
 				{ key: 'index', label: '编号' },
 				{ key: 'TypeFrequency', label: '出现次数' },
-				{ key: 'TypeName', label: '日志模板' },
+				{ key: 'TypeName', label: '事件类型' },
+				{ key: 'Cause', label: '根因推断' },
 			];
 		},
 		anomalyFields() {
 			return [
-				{ key: 'Type', label: '所在行数' },
-				{ key: 'Log', label: '异常日志' },
+				{ key: 'Type', label: '告警来源' },
+				{ key: 'Log', label: '告警日志' },
+				{ key: 'Time', label: '时间' },
 			];
 		}
 	},

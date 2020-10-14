@@ -30,6 +30,10 @@ module.exports = {
 			path.resolve('src/index.js')
 		]
 	},
+	output: {
+		filename: 'assets/[name].js',
+		publicPath: '/',
+	},
 	plugins: [
 		new VueLoaderPlugin(),
 		new webpack.DefinePlugin({
